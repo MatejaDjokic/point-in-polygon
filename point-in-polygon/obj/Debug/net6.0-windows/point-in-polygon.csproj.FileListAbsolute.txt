@@ -1,0 +1,17 @@
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.csproj.AssemblyReference.cache
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point_in_polygon.Form1.resources
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.csproj.GenerateResource.cache
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.AssemblyInfoInputs.cache
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.AssemblyInfo.cs
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.csproj.CoreCompileInputs.cache
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\bin\Debug\net6.0-windows\point-in-polygon.exe
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\bin\Debug\net6.0-windows\point-in-polygon.deps.json
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\bin\Debug\net6.0-windows\point-in-polygon.runtimeconfig.json
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\bin\Debug\net6.0-windows\point-in-polygon.dll
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\bin\Debug\net6.0-windows\point-in-polygon.pdb
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.dll
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\refint\point-in-polygon.dll
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.pdb
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\point-in-polygon.genruntimeconfig.cache
+E:\Programiranje\C#\point-in-polygon\point-in-polygon\obj\Debug\net6.0-windows\ref\point-in-polygon.dll

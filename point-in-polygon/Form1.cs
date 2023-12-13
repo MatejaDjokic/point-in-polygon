@@ -1,4 +1,5 @@
 using Codes.Geometry;
+using System.Xml.Serialization;
 
 namespace point_in_polygon
 {
@@ -11,9 +12,14 @@ namespace point_in_polygon
         const int START_Y = 10;
         const int WIDTH = 500;
         const int HEIGHT = 410;
+        const int CENTER_X = 270;
+        const int CENTER_Y = 200;
 
         Graphics g;
         Polygon polygon;
+        int n_gone = 0;
+        int radius = 50;
+        bool cursor = true;
 
         private void Triangle(object sender, EventArgs e) =>
             tb_points.Text = "200,75\r\n150, 200\r\n400, 250";
@@ -30,6 +36,7 @@ namespace point_in_polygon
         {
             InitializeComponent();
             this.MouseMove += OnMouseMove;
+            polygon = new Polygon(new List<Vec2>() { });
         }
 
         private void Form1Load(object sender, EventArgs e)
@@ -37,12 +44,14 @@ namespace point_in_polygon
             g = CreateGraphics();
 
             tb_points.Text = TB_POINTS_NO_POINTS_TEXT;
+            ngone.Text = "N = 0";
         }
 
         private void OnMouseMove(object sender, MouseEventArgs e) => move(e);
 
         private void move(MouseEventArgs e)
         {
+
             g.Clear(Color.White);
             DrawCoordinateSystem();
 
@@ -51,7 +60,27 @@ namespace point_in_polygon
             {
                 Vec2 mouse = new Vec2(e.X, e.Y);
                 fill = polygon.ContainsPoint(mouse);
+
             }
+            if (tb_points.Text != TB_POINTS_NO_POINTS_TEXT && polygon.points.Count > 2)
+            {
+                if (fill)
+                {
+                    text.Text = "Point is inside the polygon!";
+                    text.BackColor = Color.Green;
+                }
+                else
+                {
+                    text.Text = "Point is not inside the polygon!";
+                    text.BackColor = Color.Red;
+                }
+            }
+            else
+            {
+                text.Text = "No points yet!";
+                text.BackColor = Color.White;
+            }
+
             polygon.Draw(g, fill);
         }
 
@@ -86,8 +115,46 @@ namespace point_in_polygon
                 }
             }
             catch (Exception ex) { }
-            polygon = new Polygon(points);
+            if (points.Count >= 3)
+                polygon = new Polygon(new Polygon(points).ConvexHull());
             move(null);
+        }
+
+        private void ngone_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                n_gone = int.Parse(ngone.Text.Replace("N = ", "").Trim());
+            }
+            catch (Exception ex) { }
+        }
+
+        private void generate_Click(object sender, EventArgs e)
+        {
+            String poly = String.Empty;
+            if (n_gone > 2)
+            {
+                for (int i = 0; i < n_gone; i++)
+                {
+                    double angle = 2 * Math.PI * i / n_gone;
+                    double x = CENTER_X + radius * Math.Cos(angle);
+                    double y = CENTER_Y + radius * Math.Sin(angle);
+                    poly += $"{(int)x}, {(int)y}\r\n";
+                }
+                tb_points.Text = poly;
+                move(null);
+            }
+            else
+                MessageBox.Show("Number of points must be 3 or more.");
+        }
+
+        private void rad_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                radius = int.Parse(rad.Text.Replace("R = ", "").Trim());
+            }
+            catch (Exception ex) { }
         }
     }
 }
